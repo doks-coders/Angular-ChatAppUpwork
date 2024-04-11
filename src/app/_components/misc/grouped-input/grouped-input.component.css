@@ -1,0 +1,8 @@
+.custom-invalid-feedback{
+    color: rgb(255, 254, 254);
+    padding: 10px;
+    background-color: rgb(201, 45, 45);
+    border-radius: 10px;
+    font-size: x-small;
+    margin-bottom: 10px;
+}

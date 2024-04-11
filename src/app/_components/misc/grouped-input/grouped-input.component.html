@@ -5,3 +5,30 @@
         <span class="input-group-text" style="height: 100%"><i class={{icon}}></i></span>
     </div>
 </div>
+<div class="custom-invalid-feedback" *ngIf="control.errors?.['minlength']">
+    {{label}} should be at least {{control.errors?.['minlength'].requiredLength}} characters
+</div>
+<div class="custom-invalid-feedback" *ngIf="control.errors?.['maxlength']">
+    {{label}} must be at most {{control.errors?.['maxlength'].requiredLength}} characters
+</div>
+
+<div class="custom-invalid-feedback" *ngIf="control.errors?.['notMatching']">
+    Passwords do not match!
+</div>
+
+<div class="custom-invalid-feedback"  *ngIf="control.errors?.['uppercaseNotFound']">
+    {{label}} should have at least one uppercase letter
+</div>
+
+<div class="custom-invalid-feedback" *ngIf="control.errors?.['numberNotFound']">
+    {{label}} should have at least one number
+</div>
+
+<div class="custom-invalid-feedback" *ngIf="control.errors?.['alphaNumericNotFound']">
+    {{label}} should have at least one alphaNumeric
+</div>
+
+
+
+
+

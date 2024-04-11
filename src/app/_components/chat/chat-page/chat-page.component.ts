@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { delay, take } from 'rxjs';
 import { MessageRequest } from 'src/app/_models/requests/message.request';
 import { MessageResponse } from 'src/app/_models/response/message.response';
@@ -30,7 +30,7 @@ export class ChatPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      content: [""]
+      content: ["",Validators.required]
     });
     if (this.recieverId != "") {
       this.authService.getUserId().pipe(take(1)).subscribe({
