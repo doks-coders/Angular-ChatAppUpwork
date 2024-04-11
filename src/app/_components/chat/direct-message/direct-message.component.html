@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-center">
+    <div class="container-size">
+        <tabset class="member-tabs mb-3" #memberTabs>
+            <tab heading="Messages">
+                <app-chat-page *ngIf="userId" [recieverId]="userId" [isGroup]="false"></app-chat-page>
+            </tab>
+        </tabset>
+    </div>
+</div>

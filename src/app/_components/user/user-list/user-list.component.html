@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div>
+            <form [formGroup]="searchFormGroup" (submit)="searchForGroups()">
+                <div class="input-group mb-3">
+                    <input formControlName="query" type="text" class="form-control" placeholder="Search For User"
+                        aria-label="Search" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                        <button [disabled]="searchFormGroup.invalid" class="input-group-text btn btn btn-primary"
+                            type="submit" style="height: 100%"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div *ngIf="users.length" class="grid-container justify-content-between">
+        <div *ngFor="let user of users" class="p-3 rounded  grid-item shadow m-2">
+            <app-user-item [id]="user.id" [name]="user.userName"
+                [imageUrl]="user.relativeProfilePicture"></app-user-item>
+        </div>
+    </div>
+
+    <div *ngIf="users.length==0" style="height: 300px;background-color: rgb(236, 235, 235);"
+        class="mt-2 d-flex  justify-content-center align-items-center">
+        <div>No Items Currently</div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div *ngIf="messageType=='partner'" [ngClass]="'partner-message'">
+
+    <div>
+        <div class="mt-1">{{userName}}</div>
+        <div [ngClass]="'my-partner-box'">
+            {{message}}
+        </div>
+    </div>
+
+</div>
+
+
+<div *ngIf="messageType=='personal'" [ngClass]="'my-message'">
+
+    <div>
+        <div class="mt-1">{{userName}}</div>
+        <div [ngClass]="'my-chat-box'">
+            {{message}}
+        </div>
+    </div>
+
+</div>

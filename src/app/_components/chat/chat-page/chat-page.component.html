@@ -1,0 +1,24 @@
+<h5 style="text-align: center;"></h5>
+<div class="d-flex justify-content-center">
+    <div style="width: 100%;">
+        <div *ngIf="(messageService.$messagesObserved | async)?.length" [scrollTop]="scrollPosition" #parentDiv
+            class="chatbox">
+
+            <app-chat-message *ngFor="let message of (messageService.$messagesObserved | async)"
+                [messageType]="(message.senderId==userId? 'personal':'partner')" [message]="message.content"
+                [userName]="message.userName"></app-chat-message>
+
+            <div style="padding: 30px;"></div>
+        </div>
+        <form [formGroup]="formGroup" (ngSubmit)="submitMessage()">
+            <div class="p-3 d-flex justify-content-center">
+                <input style="max-width: 400px;" formControlName="content" class="form-control"
+                    placeholder="Send Message">
+                <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">
+                    <i class="fa fa-paper-plane"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>

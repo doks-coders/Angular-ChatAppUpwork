@@ -1,0 +1,11 @@
+<div class="d-flex flex-column align-items-center">
+    <div class="bg-white p-2 rounded-full shadow ">
+        <img [src]="imageUrl" style="object-fit: cover;" class="rounded-full" height="100px" width="100px" alt="">
+    </div>
+    <div class="mt-2">{{name}}</div>
+    <button class="btn btn-outline-secondary mt-2" [routerLink]="'/direct-message/'+id">Message
+        <span>
+            <i class="fa fa-envelope"></i>
+        </span>
+    </button>
+</div>

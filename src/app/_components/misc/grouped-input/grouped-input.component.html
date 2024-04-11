@@ -1,0 +1,7 @@
+<div class="input-group mb-3">
+    <input [formControl]="control" type="{{type}}" [class.is-invalid]="control.invalid && control.touched"
+        placeholder="{{label}}" type="text" class="form-control">
+    <div class="input-group-append">
+        <span class="input-group-text" style="height: 100%"><i class={{icon}}></i></span>
+    </div>
+</div>

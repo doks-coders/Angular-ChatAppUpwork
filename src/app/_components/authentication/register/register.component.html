@@ -1,0 +1,23 @@
+<h5 class="text-center">Register User</h5>
+<div class="d-flex justify-content-center">
+    <form class="p-4 form-width" [formGroup]="formGroup" (ngSubmit)="registerUser()">
+
+        <app-grouped-input [formControl]="$any(formGroup.controls['email'])" [label]="'Email'" [type]="'text'"
+            [icon]="'fa fa-envelope'"></app-grouped-input>
+
+        <app-grouped-input [formControl]="$any(formGroup.controls['userName'])" [label]="'Username'" [type]="'text'"
+            [icon]="'fa fa-user'"></app-grouped-input>
+
+
+        <app-grouped-input [formControl]="$any(formGroup.controls['phoneNumber'])" [label]="'Phone Number'"
+            [type]="'text'" [icon]="'fa fa-phone'"></app-grouped-input>
+
+
+
+
+        <div class="d-flex justify-content-center">
+            <button [disabled]="formGroup.invalid" class="btn btn-primary mt-3" type="submit">Register</button>
+        </div>
+
+    </form>
+</div>

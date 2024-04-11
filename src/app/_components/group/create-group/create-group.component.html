@@ -1,0 +1,14 @@
+<h5 class="text-center">Create Group</h5>
+<div class="d-flex justify-content-center">
+    <form class="p-4 form-width" [formGroup]="formGroup" (ngSubmit)="createGroup()">
+
+        <input formControlName="name" type="text" placeholder="Group Name" class="form-control">
+        <textarea formControlName="description" placeholder="Group Description" class="form-control mt-3" rows="5">
+
+        </textarea>
+        <div class="d-flex justify-content-center">
+            <button [disabled]="!formGroup.valid" class="btn btn-primary mt-3" type="submit">Create Group</button>
+        </div>
+
+    </form>
+</div>

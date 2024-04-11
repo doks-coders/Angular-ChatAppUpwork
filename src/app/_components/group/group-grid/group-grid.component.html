@@ -1,0 +1,10 @@
+<div *ngIf="groups.length" class="mt-2 grid-container justify-content-center">
+    <div *ngFor="let group of groups" class="p-3 rounded grid-item shadow m-2">
+        <app-group-item [name]="group.name" [id]="group.id" [description]="group.description"></app-group-item>
+    </div>
+</div>
+
+<div *ngIf="groups.length==0" style="height: 300px;background-color: rgb(236, 235, 235);"
+    class="mt-2 d-flex  justify-content-center align-items-center">
+    <div>No Items Currently</div>
+</div>

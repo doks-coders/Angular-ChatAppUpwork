@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center">
+    <div class="container-size">
+        <tabset class="member-tabs mb-3" #memberTabs>
+            <tab heading="Messages">
+                <app-chat-page *ngIf="groupId" [recieverId]="groupId" [isGroup]="true"></app-chat-page>
+            </tab>
+
+            <tab heading="Group Members">
+                <div *ngFor="let user of users" class="d-flex my-2 border p-2">
+                    <img class="rounded-full" width="25px" height="25px" src="/assets/image.png">
+                    <div style="max-width: 200px;" class="px-2">
+                        <h6>{{user.userName}}</h6>
+                    </div>
+                    <div class="px-2">
+                        <!--<div class="bg-primary" style="padding: 5px; background-color: rgb(27, 177, 59);" class="rounded-full"></div>-->
+                        <!---<div class="bg-danger"class="rounded-full"></div>-->
+                    </div>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>
