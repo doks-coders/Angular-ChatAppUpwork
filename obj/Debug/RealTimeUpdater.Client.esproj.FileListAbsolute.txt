@@ -1,1 +1,0 @@
-C:\Users\HP\source\repos\RealTimeUpdater\RealTimeUpdater.Client\obj\Debug\RealTimeUpdater.Client.esproj.CoreCompileInputs.cache
