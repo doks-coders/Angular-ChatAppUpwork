@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { UserResponse } from '../_models/response/user.response';
 import { MessageService } from './message.service';
 import { map, of } from 'rxjs';
+import { UpdateUserInformationRequest } from '../_models/requests/update-user-information.request';
 
 @Injectable({
   providedIn: 'root'
@@ -47,4 +48,7 @@ export class UserService {
     return this.httpClient.post(this.baseUrl + "users/upload-image", formData)
   }
 
+  updateUserInformation(request: UpdateUserInformationRequest){
+    return this.httpClient.post(this.baseUrl+"users/update-user-information",request)
+  }
 }

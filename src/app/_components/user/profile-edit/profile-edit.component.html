@@ -18,9 +18,11 @@
 
         <h5 class="text-center mt-5">Update Your Details</h5>
         <form class="mt-3" [formGroup]="formGroup" (submit)="updateUserInformation()">
-            <input formControlName="userName" class="form-control" placeholder="Username">
+            <app-grouped-input icon="fa fa-user" [formControl]="$any(formGroup.controls['userName'])" [label]="'Username'"></app-grouped-input>
+            <app-grouped-input icon="fa fa-phone" [formControl]="$any(formGroup.controls['phoneNumber'])" [label]="'Phone Number'"></app-grouped-input>
+       
             <div class="d-flex justify-content-center">
-                <button [disabled]="formGroup.invalid" class="btn btn-primary mt-3">Update Information</button>
+                <button [disabled]="!formGroup.valid" [type]="'submit'" class="btn btn-primary mt-3">Update Information</button>
             </div>
         </form>
     </div>
