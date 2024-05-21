@@ -7,6 +7,24 @@
   /* Adjust the gap between grid items */
 }
 
+
+.calender-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* Creates 4 columns with equal width */
+  
+  /* Adjust the gap between grid items */
+}
+
+.calender-container-items:hover{
+  border-width: 3px;
+  background-color: aliceblue;
+}
+.calender-container-items:active{
+  border-width: 1px;
+  background-color: rgb(181, 218, 250);
+}
+
 .grid-item {
 
   padding: 20px;

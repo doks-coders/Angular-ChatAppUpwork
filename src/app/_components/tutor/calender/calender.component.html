@@ -1,0 +1,25 @@
+
+<div *ngIf="created_schedules.length>0" class="d-flex justify-content-end my-3">
+    <button class="btn btn-secondary " (click)="goToBookingInfoPage()" >Process Booking</button>
+</div>
+<select [(ngModel)]="selectedMonth" (change)="getMonthSelected()" class="form-control">
+    <option *ngFor="let month of monthsInaYear;let i = index" [value]="i+1">{{ month }}</option>
+</select>
+<div class="calender-container mt-3">
+    <div *ngFor="let days of daysOfWeek" class="border p-2">
+        {{days}}
+    </div>
+
+    <div *ngFor="let item of emptyDays">
+    </div>
+    <div (click)="day.isAvailable? showModal(day.day):null" *ngFor="let day of daysOftheMonth;" style="height: 100px;"
+        [class]="(!day.isAvailable?'transparent ':' ') +(day.isToday?'border-primary ':'')+'d-flex flex-column calender-container-items justify-content-between border p-3'">
+        <div style="font-size: large;">{{day.day}}</div>
+
+        <div class="d-flex flex-column ">
+            <div *ngFor="let memo of day.memo" style="font-size: xx-small;background-color: rgb(181, 222, 255);"
+                class="p-1 fw-bold mt-1">{{memo}}</div>
+        </div>
+
+    </div>
+</div>

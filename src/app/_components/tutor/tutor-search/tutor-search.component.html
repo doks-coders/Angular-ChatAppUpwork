@@ -1,0 +1,23 @@
+<div class="d-flex align-items-center p-2">
+<section>
+    <div style="font-weight: bold;">Get the latest tutors for this search</div>
+    <div style="font-weight: lighter;">Let your search count</div>
+</section>
+    <input placeholder="Course Title" class="form-control" style="border-radius: 10px;">
+    <button class="btn btn-primary" style="border-radius: round; margin-left: 10px;" >Search</button>
+</div>
+
+<div  class="grid-container">
+    <div *ngFor="let item of items">
+        <img width="100%" height="150px" src="assets/person.png" style="object-fit: cover;">
+        <div class="p-3">
+            <h4 style="font-weight: bold;">Salman Khan</h4>
+            <p style="font-weight: lighter;">Founder and CEO of Khan Academy</p>
+            <p class="mt-3">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Esse perspiciatis nesciunt 
+            </p>
+            <button (click)="navigateToInfo()" class="btn btn-light text-purple" style="width: 100%;">Learn More</button>
+        </div>
+    </div>
+</div>

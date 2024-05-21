@@ -1,0 +1,14 @@
+#resizable {
+    width: 100%; /* Full width */
+    height: 100%; /* Initial height */
+    background-color: lightblue; /* Background color for visibility */
+    position: absolute;
+}
+#resizer {
+    right: 0;
+    position: absolute;
+    width: 10%; /* Full width */
+    height: 100%; /* Height of the drag handle */
+    background-color: darkblue; /* Color of the drag handle */
+    cursor: w-resize; /* Cursor changes to indicate resizable area */
+}
