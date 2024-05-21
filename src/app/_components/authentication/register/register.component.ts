@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterRequest } from 'src/app/_models/requests/register.request';
 import { AuthService } from 'src/app/_services/auth.service';
-import { MessageService } from 'src/app/_services/message.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +12,7 @@ import { MessageService } from 'src/app/_services/message.service';
 export class RegisterComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({});
   registerRequest?: RegisterRequest;
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private messageService: MessageService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
       email: ["", Validators.email],
@@ -24,7 +23,6 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     this.authService.registerUser(this.formGroup.value).subscribe({
       next: (_) => {
-        this.messageService.refreshObserver.next(Math.random().toString())
         this.router.navigateByUrl('/check-email');
       },
     })

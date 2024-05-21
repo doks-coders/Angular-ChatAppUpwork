@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+<div class="modal-header">
+    <div class="modal-title">Choose Time on {{dateObject?.day}}/{{dateObject?.month}}/{{dateObject?.year}}</div>
+</div>
+
+<div class="modal-body">
+   
+
+        <div *ngIf="dateObject">
+            <div>
+                <div value="0" disabled>Select Memo</div>
+                <select formControlName="type"  class="form-control">
+                   
+                    <option [value]="item" *ngFor="let item of memoTypes">{{item}}</option>
+                </select>
+            </div>
+            <timepicker formControlName="time" ></timepicker>
+            <textarea formControlName="bookInfo"  class="form-control" placeholder="Extra Information"></textarea>
+        </div>
+        
+ 
+   
+</div>
+
+<div class="modal-footer">
+    <button [disabled]="form.invalid" class="btn btn-success" (click)="submit()">Submit</button>
+    
+</div>
+</form>

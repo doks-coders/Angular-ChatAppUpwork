@@ -9,5 +9,4 @@ export class ChatMessageComponent {
   @Input() messageType: 'partner' | 'personal' = "personal"
   @Input() message: string = ""
   @Input() userName: string = ""
-
 }

@@ -1,24 +1,48 @@
-<h5 style="text-align: center;"></h5>
-<div class="d-flex justify-content-center">
-    <div style="width: 100%;">
-        <div *ngIf="(messageService.$messagesObserved | async)?.length" [scrollTop]="scrollPosition" #parentDiv
-            class="chatbox">
 
-            <app-chat-message *ngFor="let message of (messageService.$messagesObserved | async)"
-                [messageType]="(message.senderId==userId? 'personal':'partner')" [message]="message.content"
-                [userName]="message.userName"></app-chat-message>
+<div class="row">
+    <div class="col-md-3">
+        <div *ngFor="let item of [2,3,4,5]" class="mb-2 d-flex align-items-center justify-content-between border p-2" style="border-radius: 10px;">
+            <div class="d-flex align-items-center">
+                <img src="assets/person.png"  height="40px" width="40px" style="border-radius: 100%;object-fit: cover;">
 
-            <div style="padding: 30px;"></div>
-        </div>
-        <form [formGroup]="formGroup" (ngSubmit)="submitMessage()">
-            <div class="p-3 d-flex justify-content-center">
-                <input style="max-width: 400px;" formControlName="content" class="form-control"
-                    placeholder="Send Message">
-                <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">
-                    <i class="fa fa-paper-plane"></i>
-                </button>
+                <div style="margin-left: 10px;">
+                    <div  style="font-size: small;">Daniel Odokuma</div>
+                    <div style="font-size: xx-small;">Software Developer</div>
+                </div>
             </div>
-        </form>
+           
+            <div class="p-1" style="background-color: rgb(54, 255, 47); border-radius: 100%;"></div>
+        </div>
     </div>
 
+    <div class="col-md-9 border" style="border-radius: 10px;">
+        <h5 style="text-align: center;"></h5>
+        <div class="d-flex justify-content-center">
+            <div style="width: 100%;">
+                <div  [scrollTop]="scrollPosition" #parentDiv
+                    class="chatbox">
+        
+                    <app-chat-message 
+                        [messageType]="'personal'" [message]="'Meow'"
+                        [userName]="'Daniel'"></app-chat-message>
+        
+                        <app-chat-message 
+                        [messageType]="'partner'" [message]="'Meow'"
+                        [userName]="'Peter'"></app-chat-message>
+        
+                    <div style="padding: 30px;"></div>
+                </div>
+                <form [formGroup]="formGroup" (ngSubmit)="submitMessage()">
+                    <div class="p-3 d-flex justify-content-center">
+                        <input style="max-width: 400px;" formControlName="content" class="form-control"
+                            placeholder="Send Message">
+                        <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        
+        </div>
+    </div>
 </div>

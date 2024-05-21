@@ -1,0 +1,21 @@
+<p>rtchome works!</p>
+
+<div class="d-flex">
+    <input class="form-control" placeholder="Caller 1" [(ngModel)]="callerId">
+    <button class="btn btn-primary" (click)="callAPeer(callerId)">Call</button>
+</div>
+
+<div class="d-flex">
+    <input class="form-control" placeholder="Caller 2" [(ngModel)]="caller2Id">
+    <button class="btn btn-primary" (click)="callAPeer2(caller2Id)">Call</button>
+</div>
+
+<div id="localVideoContainer">
+    <h2>Local Video</h2>
+    <video id="localVideo" autoplay playsinline muted></video>
+</div>
+
+<video id="remoteVideo" autoplay playsinline muted></video>
+
+<video id="remoteVideo2" autoplay playsinline muted></video>
+

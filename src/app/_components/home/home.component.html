@@ -1,1 +1,27 @@
-<app-group-list></app-group-list>
+<select [(ngModel)]="mode" (change)="changeValue()">
+    <option value="move">Move</option>
+    <option value="resize">Resize</option>
+</select>
+
+<div  id="container" class="container">    
+    <div class="video-item" id="displacement">
+        <div [class]="(mode=='resize')?' display-none':''">
+            <div
+            id="draggable"
+            [class]="'draggable bg-danger ' "
+            (mousedown)="onMouseDown($event)"
+            (mouseup)="onMouseUp()"
+            (mousemove)="onMouseMove($event)"
+          >
+          </div>
+        </div>
+       
+        <app-video-elements [class]="(mode=='move')?' display-none':''"></app-video-elements>
+    </div>
+    
+   
+  </div>
+
+<div class="d-flex"> 
+   
+</div>
